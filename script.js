@@ -1,6 +1,7 @@
 const inputs = document.querySelectorAll(".input");
 const button = document.querySelector(".button");
 const email = document.querySelector(".email");
+const form = document.querySelector(".form");
 
 button.addEventListener("click", (event) => {
   event.preventDefault();
@@ -9,13 +10,15 @@ button.addEventListener("click", (event) => {
 });
 
 function checkInputs(inputs) {
-  for (input of inputs) {
+  for (const input of inputs) {
+    input.setCustomValidity("");
     if (input.value === "") {
-      console.log(`${input.placeholder} cannot be empty.`);
+      input.setCustomValidity(`${input.placeholder} cannot be empty.`);
     } else {
       input.innerText = input.value;
     }
   }
+  form.reportValidity();
 }
 
 function checkEmail(email) {
@@ -26,6 +29,7 @@ function checkEmail(email) {
 
   const emailValue = email.value;
   if (!emailValue.includes("@") || !emailValue.includes(".")) {
-    console.log("Looks like this is not an email.");
+    email.setCustomValidity("Looks like this is not an email.");
+    form.reportValidity();
   }
 }

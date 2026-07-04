@@ -2,6 +2,7 @@
   /* Primary */
   --Red-400: hsl(0, 100%, 74%);
   --Green-400: hsl(154, 59%, 51%);
+  --Green-200: hsl(154, 50%, 70%);
   /* Accent */
   --Purple-700: hsl(248, 32%, 49%);
   /* Neutral */
@@ -155,6 +156,34 @@ h6 {
   align-items: space-evenly;
 }
 
+/* .input-group {
+  position: relative;
+}
+
+.error-icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  display: none; 
+}
+
+.error-message {
+  display: none;
+  color: var(--Red-400);
+  font-size: 0.8rem;
+  text-align: right;
+  margin-top: 0.25rem;
+}
+
+.input-group.error .error-icon {
+  display: block;
+}
+
+.input-group.error .error-message {
+  display: block;
+} */
+
 .input {
   padding: 0.5em;
   border: 1px solid gray;
@@ -170,6 +199,10 @@ h6 {
   text-transform: uppercase;
 }
 
+.button:hover {
+  background-color: var(--Green-200);
+}
+
 .agreement {
   color: var(--Gray-900);
   font-size: calc(var(--font-size) * 0.8);
@@ -178,4 +211,40 @@ h6 {
 .terms {
   color: var(--Red-400);
   font-weight: var(--fw-700);
+}
+
+@media (min-width: 600px) {
+  body {
+    background-image: url(images/bg-intro-desktop.png);
+  }
+
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 100vh;
+    padding: 0;
+  }
+
+  .product {
+    max-width: 445px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .product-title {
+    font-size: 2.5rem;
+  }
+
+  .right-half-container {
+    width: 445px;
+  }
+
+  .promotion,
+  .form {
+    margin: 0.5rem 0;
+  }
 }
