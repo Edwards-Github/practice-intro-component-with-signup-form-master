@@ -14,7 +14,6 @@ function checkInputs(inputs) {
       console.log(`${input.placeholder} cannot be empty.`);
     } else {
       input.innerText = input.value;
-      console.log(input.value);
     }
   }
 }
