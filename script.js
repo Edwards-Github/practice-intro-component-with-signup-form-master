@@ -23,7 +23,7 @@ function checkInputs(inputGroups) {
       userInput.innerText = userInput.value;
       error.classList.remove("error-icon");
       errorMessage.classList.remove("error-message");
-      form.classList.add("error-form");
+      form.classList.remove("error-form");
     }
   }
 }
@@ -40,5 +40,8 @@ function checkEmail(emailGroup) {
   if (!emailValue.includes("@") || !emailValue.includes(".")) {
     errorIcon.classList.add("error-icon");
     errorMessage.classList.add("error-message");
+  } else {
+    errorIcon.classList.remove("error-icon");
+    errorMessage.classList.remove("error-message");
   }
 }
