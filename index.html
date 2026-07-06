@@ -44,27 +44,37 @@
           <form action="" class="form">
             <div class="input-group">
               <input type="text" placeholder="First Name" class="input" />
-              <img src="images/icon-error.svg" alt="" class="error-icon" />
+              <img src="images/icon-error.svg" alt="" class="error" />
             </div>
-            <p class="error-message">First Name cannot be empty</p>
+            <p class="error-m">First Name cannot be empty</p>
 
             <div class="input-group">
               <input type="text" placeholder="Last Name" class="input" />
-              <img src="images/icon-error.svg" alt="" class="error-icon" />
+              <img src="images/icon-error.svg" alt="" class="error" />
             </div>
-            <p class="error-message">Last Name cannot be empty</p>
+            <p class="error-m">Last Name cannot be empty</p>
+
+            <div class="input-group email-group">
+              <input
+                type="email"
+                placeholder="Email Address"
+                class="input email"
+              />
+              <img
+                src="images/icon-error.svg"
+                alt=""
+                class="error error-email-icon"
+              />
+            </div>
+            <p class="error-m error-email-message">
+              Looks like this is not an email
+            </p>
 
             <div class="input-group">
-              <input type="text" placeholder="Email Address" class="input" />
-              <img src="images/icon-error.svg" alt="" class="error-icon" />
+              <input type="password" placeholder="Password" class="input" />
+              <img src="images/icon-error.svg" alt="" class="error" />
             </div>
-            <p class="error-message">Looks like this is not an email</p>
-
-            <div class="input-group">
-              <input type="text" placeholder="Password" class="input" />
-              <img src="images/icon-error.svg" alt="" class="error-icon" />
-            </div>
-            <p class="error-message">Password cannot be empty</p>
+            <p class="error-m">Password cannot be empty</p>
 
             <button class="button">Claim your free trial</button>
             <p class="agreement">

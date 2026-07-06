@@ -161,12 +161,22 @@ h6 {
   align-items: center;
 }
 
+.error {
+  display: none;
+}
+
+.error-m {
+  display: none;
+}
+
 .error-icon {
+  display: block;
   height: 1.5rem;
-  margin: -2.5rem;
+  margin-left: -2.5rem;
 }
 
 .error-message {
+  display: block;
   color: var(--Red-400);
   font-size: calc(var(--font-size) * 0.55);
   text-align: end;
@@ -233,7 +243,13 @@ h6 {
   }
 
   .form {
-    gap: 0.25rem;
+    gap: 1rem;
+    padding: 2rem;
+  }
+
+  .error-form {
+    gap: 0.5rem;
+    padding: 2rem;
   }
 
   .promotion,

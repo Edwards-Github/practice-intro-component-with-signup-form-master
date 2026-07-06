@@ -1,35 +1,44 @@
-const inputs = document.querySelectorAll(".input");
+const inputGroups = document.querySelectorAll(".input-group");
+const emailGroup = document.querySelector(".email-group");
 const button = document.querySelector(".button");
-const email = document.querySelector(".email");
 const form = document.querySelector(".form");
 
 button.addEventListener("click", (event) => {
   event.preventDefault();
-  checkInputs(inputs);
-  checkEmail(email);
+  checkInputs(inputGroups);
+  checkEmail(emailGroup);
 });
 
-function checkInputs(inputs) {
-  for (const input of inputs) {
-    input.setCustomValidity("");
-    if (input.value === "") {
-      input.setCustomValidity(`${input.placeholder} cannot be empty.`);
+function checkInputs(inputGroups) {
+  for (const input of inputGroups) {
+    const userInput = input.querySelector(".input");
+    const error = input.querySelector(".error");
+    const errorMessage = input.nextElementSibling; // the <p class="error-m"> right after this div
+
+    if (userInput.value === "") {
+      error.classList.add("error-icon");
+      errorMessage.classList.add("error-message");
+      form.classList.add("error-form");
     } else {
-      input.innerText = input.value;
+      userInput.innerText = userInput.value;
+      error.classList.remove("error-icon");
+      errorMessage.classList.remove("error-message");
+      form.classList.add("error-form");
     }
   }
-  form.reportValidity();
 }
 
-function checkEmail(email) {
-  // null check
-  if (!email) {
+function checkEmail(emailGroup) {
+  const emailValue = emailGroup.querySelector(".input").value;
+  const errorIcon = emailGroup.querySelector(".error-email-icon");
+  const errorMessage = emailGroup.nextElementSibling;
+
+  if (!emailValue) {
     return;
   }
 
-  const emailValue = email.value;
   if (!emailValue.includes("@") || !emailValue.includes(".")) {
-    email.setCustomValidity("Looks like this is not an email.");
-    form.reportValidity();
+    errorIcon.classList.add("error-icon");
+    errorMessage.classList.add("error-message");
   }
 }
