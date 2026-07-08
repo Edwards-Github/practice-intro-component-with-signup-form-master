@@ -1,15 +1,25 @@
-const inputGroups = document.querySelectorAll(".input-group");
+const inputGroups = document.querySelectorAll(".input-group:not(.email-group)");
 const emailGroup = document.querySelector(".email-group");
 const button = document.querySelector(".button");
 const form = document.querySelector(".form");
+const email = document.querySelector(".email");
 
-button.addEventListener("click", (event) => {
+form.addEventListener("submit", function (event) {
   event.preventDefault();
-  checkInputs(inputGroups);
-  checkEmail(emailGroup);
+
+  const inputsHaveError = checkInputs(inputGroups);
+  const emailHasError = checkEmail(event, email);
+
+  if (inputsHaveError || emailHasError) {
+    form.classList.add("error-form");
+  } else {
+    form.classList.remove("error-form");
+  }
 });
 
 function checkInputs(inputGroups) {
+  let hasError = false;
+
   for (const input of inputGroups) {
     const userInput = input.querySelector(".input");
     const error = input.querySelector(".error");
@@ -18,30 +28,29 @@ function checkInputs(inputGroups) {
     if (userInput.value === "") {
       error.classList.add("error-icon");
       errorMessage.classList.add("error-message");
-      form.classList.add("error-form");
+      hasError = true;
     } else {
-      userInput.innerText = userInput.value;
       error.classList.remove("error-icon");
       errorMessage.classList.remove("error-message");
-      form.classList.remove("error-form");
     }
   }
+
+  return hasError;
 }
 
-function checkEmail(emailGroup) {
-  const emailValue = emailGroup.querySelector(".input").value;
+function checkEmail(event, email) {
   const errorIcon = emailGroup.querySelector(".error-email-icon");
   const errorMessage = emailGroup.nextElementSibling;
 
-  if (!emailValue) {
-    return;
-  }
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  if (!emailValue.includes("@") || !emailValue.includes(".")) {
+  if (!email.checkValidity() || !emailPattern.test(email.value)) {
     errorIcon.classList.add("error-icon");
     errorMessage.classList.add("error-message");
+    return true;
   } else {
     errorIcon.classList.remove("error-icon");
     errorMessage.classList.remove("error-message");
+    return false;
   }
 }
