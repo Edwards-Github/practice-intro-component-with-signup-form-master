@@ -28,7 +28,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.<img width="1218" height="800" alt="Capture" src="https://github.com/user-attachments/assets/ccfd7df0-e496-4a81-9d35-827ac99dc64a" />
+jpg)
 
 
 ### Links
