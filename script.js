@@ -38,7 +38,7 @@ function checkInputs(inputGroups) {
   return hasError;
 }
 
-function checkEmail(event, email) {
+function checkEmail(email) {
   const errorIcon = emailGroup.querySelector(".error-email-icon");
   const errorMessage = emailGroup.nextElementSibling;
 
