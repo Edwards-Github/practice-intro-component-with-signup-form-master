@@ -7,7 +7,7 @@ form.addEventListener("submit", function (event) {
   event.preventDefault();
 
   const inputsHaveError = checkInputs(inputGroups);
-  const emailHasError = checkEmail(event, email);
+  const emailHasError = checkEmail(email);
 
   if (inputsHaveError || emailHasError) {
     form.classList.add("error-form");
