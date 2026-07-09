@@ -30,8 +30,6 @@ Users should be able to:
 
 <img width="1218" height="800" alt="Capture" src="https://github.com/user-attachments/assets/ccfd7df0-e496-4a81-9d35-827ac99dc64a" />
 
-
-
 ### Links
 
 - Solution URL: [https://github.com/Edwards-Github/practice-intro-component-with-signup-form-master](https://github.com/Edwards-Github/practice-intro-component-with-signup-form-master)
