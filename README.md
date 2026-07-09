@@ -47,12 +47,13 @@ Users should be able to:
 ### What I learned
 
 1. Displaying error messages and icon through adding and removing classes.
-2. Learned about checkValidity() function for email
-3. Learned about test() function for regular expressions
+2. Learned about checkValidity() function for email. checkValidity() evaluate the validation constraints applied to HTML form elements. It returns true if an element (or all inputs within a form) satisfies the validation rules set on it, and false if it fails any constraints.
+   The checkValidity(); however returns true even if the email was something like abc@yahoo so we needed to add a regular expression to make sure it is valid.
+3. Learned about test() function for regular expressions. The test() function tests the email and sees if it follows the regular pattern in the variable emailPattern.
 
 ### Continued development
 
-1. I want to explore more form type projects.
+1. I want to explore more form type projects so that I can continue practicing with the checkValidity() and regular patterns for validations of user information.
 
 ## Author
 

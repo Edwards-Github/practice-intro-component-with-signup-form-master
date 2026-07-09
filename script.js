@@ -1,6 +1,5 @@
 const inputGroups = document.querySelectorAll(".input-group:not(.email-group)");
 const emailGroup = document.querySelector(".email-group");
-const button = document.querySelector(".button");
 const form = document.querySelector(".form");
 const email = document.querySelector(".email");
 
